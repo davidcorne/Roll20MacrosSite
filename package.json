@@ -1,0 +1,16 @@
+{
+  "name": "roll20macrosite",
+  "version": "1.0.0",
+  "description": "A site for generating pf2 Roll20 macros",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha utest.js"
+  },
+  "author": "David Corne",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-string": "^1.5.0",
+    "mocha": "^8.2.1"
+  }
+}
