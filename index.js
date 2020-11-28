@@ -49,7 +49,7 @@ const Roll20Macros = {
         for (character of characters) {
             characterText += this.generateCharacter(character, skill)
         }
-        return `${skill}, /w gm &{template:default&#125; {{name=Group Secret ${skill} Check&#125;&#125; ${characterText}`
+        return `|${skill}, /w gm &{template:default&#125; {{name=Group Secret ${skill} Check&#125;&#125; ${characterText}`
     },
     generateMacro: function(characters, skills) {
         let skillsText = ''
@@ -57,7 +57,7 @@ const Roll20Macros = {
             skillsText += this.generateSkill(characters, skill)
         }
 
-        return `?{Which Skill|${skillsText}}`
+        return `?{Which Skill${skillsText}}`
     }
 }
 
