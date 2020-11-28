@@ -34,6 +34,9 @@ const Roll20Macros = {
         const macro = this.generateMacro(characters, skills)
         const output = document.getElementById('macroOutput')
         output.innerHTML = macro
+
+        const copyButton = document.getElementById("copyButton")
+        copyButton.disabled = false
     },
     copyOutput: function() {
         const output = document.getElementById('macroOutput')
