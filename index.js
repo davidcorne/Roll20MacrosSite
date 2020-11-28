@@ -41,8 +41,23 @@ const Roll20Macros = {
     getSkills: function() {
         return ['PERCEPTION', 'STEALTH']
     },
+    generateCharacter: function(character, skill) {
+        return `{{${character}=[[1d20 + @{${character}|${skill}}]]&#125;&#125; `
+    },
+    generateSkill: function(characters, skill) {
+        let characterText = ''
+        for (character of characters) {
+            characterText += this.generateCharacter(character, skill)
+        }
+        return `${skill}, /w gm &{template:default&#125; {{name=Group Secret ${skill} Check&#125;&#125; ${characterText}`
+    },
     generateMacro: function(characters, skills) {
-        return `?{Which Skill ${skills}`
+        let skillsText = ''
+        for (skill of skills) {
+            skillsText += this.generateSkill(characters, skill)
+        }
+
+        return `?{Which Skill|${skillsText}}`
     }
 }
 
