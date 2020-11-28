@@ -35,11 +35,19 @@ const Roll20Macros = {
         const output = document.getElementById('macroOutput')
         output.innerHTML = macro
     },
+    getTextValues: function(type) {
+        const typeNodes = document.getElementsByClassName(type + "Name")
+        const textValues = []
+        for (typeNode of typeNodes) {
+            textValues.push(typeNode.value)
+        }
+        return textValues
+    },
     getCharacters: function() {
-        return ['Dave', 'Farran']
+        return this.getTextValues('character')
     },
     getSkills: function() {
-        return ['PERCEPTION', 'STEALTH']
+        return this.getTextValues('skill')
     },
     generateCharacter: function(character, skill) {
         return `{{${character}=[[1d20 + @{${character}|${skill}}]]&#125;&#125; `
@@ -61,6 +69,6 @@ const Roll20Macros = {
     }
 }
 
-if (module) {
+if (typeof module !== 'undefined') {
     module.exports = Roll20Macros
 }
