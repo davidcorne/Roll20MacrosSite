@@ -29,6 +29,19 @@ const Roll20Macros = {
         }
     },
     generateOutput: function() {
-
+        const characters = this.getCharacters()
+        const skills = this.getSkills()
+        const macro = this.generateMacro(characters, skills)
+        const output = document.getElementById('macroOutput')
+        output.innerHTML = macro
+    },
+    getCharacters: function() {
+        return ['Dave', 'Farran']
+    },
+    getSkills: function() {
+        return ['PERCEPTION', 'STEALTH']
+    },
+    generateMacro: function(characters, skills) {
+        return `/w gm &{template:default} {{name=Group Secret ${skills}}} ${characters}`
     }
 }
