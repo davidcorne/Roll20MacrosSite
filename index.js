@@ -42,6 +42,10 @@ const Roll20Macros = {
         return ['PERCEPTION', 'STEALTH']
     },
     generateMacro: function(characters, skills) {
-        return `/w gm &{template:default} {{name=Group Secret ${skills}}} ${characters}`
+        return `?{Which Skill ${skills}`
     }
+}
+
+if (module) {
+    module.exports = Roll20Macros
 }
