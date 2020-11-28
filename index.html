@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="/index.js"></script>    
+    <script src="/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/index.css">
 </head>
 <body>
 
@@ -84,7 +85,10 @@
 <fieldset>
     <legend>Output</legend>
     <input type="button" value="Generate" onclick="Roll20Macros.generateOutput()">
-    <pre id="macroOutput"></pre>  
+    <br>
+    <textarea id="macroOutput"></textarea>
+    <br>
+    <button onclick="Roll20Macros.copyOutput()">Copy Output</button>
 </fieldset>
 
 </body>

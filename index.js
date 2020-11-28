@@ -35,6 +35,12 @@ const Roll20Macros = {
         const output = document.getElementById('macroOutput')
         output.innerHTML = macro
     },
+    copyOutput: function() {
+        const output = document.getElementById('macroOutput')
+        output.select()
+        output.setSelectionRange(0, 99999)
+        document.execCommand('copy')
+    },
     getTextValues: function(type) {
         const typeNodes = document.getElementsByClassName(type + "Name")
         const textValues = []
