@@ -4,7 +4,7 @@ const chai = require('chai')
 chai.use(require('chai-string'))
 const assert = chai.assert
 
-const Roll20Macros = require('./index')
+const Roll20Macros = require('./client/index')
 
 describe('Macro generation', function() {
     it('One character, one skill', function() {
